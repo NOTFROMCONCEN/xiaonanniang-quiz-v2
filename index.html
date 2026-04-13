@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>你是小男娘吗？人格测试</title>
+    <meta
+      name="description"
+      content="一份偏整活风格的趣味人格测试，回答 10 道题，看看你的隐藏气质会落在哪个频道。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page-glow glow-left"></div>
+    <div class="page-glow glow-right"></div>
+    <div class="page-grid"></div>
+
+    <main class="app-shell">
+      <section id="intro-card" class="hero-card state-card">
+        <div class="hero-layout">
+          <div class="hero-copy-block">
+            <p class="eyebrow">FUN QUIZ / 纯属整活</p>
+            <h1>你是小男娘吗？</h1>
+            <p class="hero-copy">
+              这是一份气质侦测型网页测试。没有科学依据，但很有节目效果。
+              回答完 10 道题，看看你的隐藏属性会滑向哪一边。
+            </p>
+
+            <div class="hero-meta">
+              <span>10 道题</span>
+              <span>约 1 分钟</span>
+              <span>支持断点续测</span>
+            </div>
+
+            <div class="hero-actions">
+              <button id="start-btn" class="primary-btn hero-btn" type="button">开始测试</button>
+              <button id="resume-btn" class="ghost-btn hero-btn hidden" type="button">继续上次进度</button>
+            </div>
+          </div>
+
+          <aside class="hero-panel" aria-label="测试亮点">
+            <div class="hero-panel-card">
+              <span class="panel-tag">STYLE</span>
+              <strong>轻甜、恶搞、偏二次元</strong>
+              <p>题目会围绕审美、表达、社交反应和一些很微妙的嘴硬时刻展开。</p>
+            </div>
+            <div class="hero-panel-card">
+              <span class="panel-tag">OUTPUT</span>
+              <strong>4 种结果类型</strong>
+              <p>每种结果都有独立标签、总结和气质关键词，适合发给朋友一起互测。</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="quiz-card" class="quiz-card state-card hidden">
+        <div class="quiz-head">
+          <div>
+            <p class="section-tag">TEST AREA</p>
+            <h2 id="question-title">正在加载题目...</h2>
+          </div>
+          <div class="progress-wrap">
+            <span id="progress-text">第 1 题 / 共 10 题</span>
+            <span id="progress-detail">已完成 0 题</span>
+            <div class="progress-bar" aria-hidden="true">
+              <div id="progress-fill"></div>
+            </div>
+          </div>
+        </div>
+
+        <p id="question-description" class="question-description"></p>
+
+        <div
+          id="answers"
+          class="answers"
+          role="radiogroup"
+          aria-labelledby="question-title"
+          aria-describedby="question-description"
+        ></div>
+
+        <div class="nav-row">
+          <button id="prev-btn" class="ghost-btn" type="button">上一题</button>
+          <button id="next-btn" class="primary-btn" type="button">下一题</button>
+        </div>
+      </section>
+
+      <section id="result-card" class="result-card state-card hidden" aria-live="polite">
+        <div class="result-topline">
+          <div id="result-badge" class="result-badge">结果标签</div>
+          <button id="share-btn" class="ghost-btn share-btn" type="button">复制结果文案</button>
+        </div>
+        <h2 id="result-title">结果标题</h2>
+        <p id="result-score" class="result-score"></p>
+        <p id="result-summary" class="result-summary"></p>
+        <div id="result-traits" class="trait-list"></div>
+        <p id="share-feedback" class="share-feedback hidden" aria-live="polite"></p>
+        <div class="result-actions">
+          <button id="restart-btn" class="primary-btn" type="button">重新测试</button>
+          <button id="back-home-btn" class="ghost-btn" type="button">返回首页</button>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
